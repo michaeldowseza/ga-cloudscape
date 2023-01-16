@@ -51,8 +51,12 @@ function WizardPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    ReactGA.gtag("event", "tutorial_begin");
+    ReactGA.gtag("event", "wizard_begin");
   }, []);
+
+  useEffect(() => {
+    ReactGA.gtag("event", "wizard_step", { stepIndex: activeStepIndex });
+  }, [activeStepIndex]);
 
   return (
     <Wizard
@@ -61,7 +65,7 @@ function WizardPage() {
       activeStepIndex={activeStepIndex}
       onNavigate={(e) => setActiveStepIndex(e.detail.requestedStepIndex)}
       onSubmit={() => {
-        ReactGA.gtag("event", "tutorial_complete");
+        ReactGA.gtag("event", "wizard_complete");
         navigate("/");
       }}
       secondaryActions={
