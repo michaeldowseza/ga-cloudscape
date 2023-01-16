@@ -8,6 +8,8 @@ import AppLayout, {
 import BreadcrumbGroup from "@cloudscape-design/components/breadcrumb-group";
 import SideNavigation from "@cloudscape-design/components/side-navigation";
 
+import usePageTracking from "./hooks/usePageTracking";
+
 import HomePage from "./pages/home";
 import WizardPage from "./pages/wizard";
 
@@ -18,6 +20,7 @@ const contentTypeMap: Record<string, AppLayoutProps["contentType"]> = {
 function App() {
   const [activeHref, setActiveHref] = useState("/");
   const navigate = useNavigate();
+  usePageTracking();
 
   return (
     <AppLayout

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import Box from "@cloudscape-design/components/box";
 import Button from "@cloudscape-design/components/button";
 import Wizard, { WizardProps } from "@cloudscape-design/components/wizard";
 
@@ -8,7 +7,7 @@ const steps: WizardProps.Step[] = [
   {
     title: "Step 1",
     content: (
-      <div>
+      <div data-analytics-id="ga-step-1">
         <div id="content-text">Content 1</div>
       </div>
     ),
@@ -16,7 +15,7 @@ const steps: WizardProps.Step[] = [
   {
     title: "Step 2",
     content: (
-      <div>
+      <div data-analytics-id="ga-step-2">
         <div id="content-text">Content 2</div>
       </div>
     ),
@@ -24,7 +23,7 @@ const steps: WizardProps.Step[] = [
   {
     title: "Step 3",
     content: (
-      <div>
+      <div data-analytics-id="ga-step-3">
         <div id="content-text">Content 3</div>
       </div>
     ),
