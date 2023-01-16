@@ -9,7 +9,7 @@ const steps: WizardProps.Step[] = [
   {
     title: "Step 1",
     content: (
-      <div data-analytics-id="ga-tutorial-step-1">
+      <div data-analytics="ga-tutorial-step" data-analytics-value="1">
         <div id="content-text">Content 1</div>
       </div>
     ),
@@ -17,7 +17,7 @@ const steps: WizardProps.Step[] = [
   {
     title: "Step 2",
     content: (
-      <div data-analytics-id="ga-tutorial-step-2">
+      <div data-analytics="ga-tutorial-step" data-analytics-value="2">
         <div id="content-text">Content 2</div>
       </div>
     ),
@@ -25,7 +25,7 @@ const steps: WizardProps.Step[] = [
   {
     title: "Step 3",
     content: (
-      <div data-analytics-id="ga-tutorial-step-3">
+      <div data-analytics="ga-tutorial-step" data-analytics-value="3">
         <div id="content-text">Content 3</div>
       </div>
     ),
