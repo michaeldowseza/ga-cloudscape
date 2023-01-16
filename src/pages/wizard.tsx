@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ReactGA from "react-ga4";
 
 import Button from "@cloudscape-design/components/button";
@@ -47,6 +48,7 @@ const i18nStrings: WizardProps.I18nStrings = {
 
 function WizardPage() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     ReactGA.gtag("event", "tutorial_begin");
@@ -60,6 +62,7 @@ function WizardPage() {
       onNavigate={(e) => setActiveStepIndex(e.detail.requestedStepIndex)}
       onSubmit={() => {
         ReactGA.gtag("event", "tutorial_complete");
+        navigate("/");
       }}
       secondaryActions={
         activeStepIndex === 2 ? <Button>Save as draft</Button> : null
